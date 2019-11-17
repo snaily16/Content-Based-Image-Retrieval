@@ -20,6 +20,8 @@ cd = ColorDescriptor((8, 12, 3))
 
 # load the query image and describe it
 query = cv2.imread(args["query"])
+#query = cv2.resize(query,(416,416))
+#cv2.imwrite('static', query) 
 features = cd.describe(query)
 
 # perform the search

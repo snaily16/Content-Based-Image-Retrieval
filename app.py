@@ -1,4 +1,5 @@
 import os
+# from shutil import copy2
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 import numpy as np
@@ -31,16 +32,20 @@ def upload_image():
 			return redirect(request.url)
 
 		if file and allowed_file(file.filename):
+			src=os.path.abspath(file.filename)
+			#copy2(src,'static')
 			return render_template(
 				'upload.html', results = search(file.filename), filename=file.filename
 				)
 	return render_template('upload.html')
 
-def search(query):
+def search(filename):
 	#print(query)
 	cd = ColorDescriptor((8, 12, 3))
-	query = cv2.imread(query)
+	query = cv2.imread(filename)
 	query = cv2.resize(query,(416,416))
+	filepath='static/'+filename
+	cv2.imwrite(filepath, query) 
 	features = cd.describe(query)
 	searcher = Searcher()
 	results = searcher.search(features)
