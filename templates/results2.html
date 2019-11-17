@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Results</title>
+</head>
+
+<body>
+	{% if results %}
+	<table>
+		<tbody>
+			{% for (score, resultID) in results %}
+			<tr>
+				<td>{{ resultID }}</td>
+				<td> <img src="static/{{ resultID }}" style="width:20%;"> </td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{% else %}
+		Search images :)
+	{% endif %}
+
+	<img src="0.jpg">
+</body>
+</html>

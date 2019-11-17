@@ -1,0 +1,51 @@
+<html>  
+
+<head>
+	<title>upload</title>  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    body{
+    margin-top:50px;
+      }
+      button{
+        height: 34px;
+      }
+      .hide{display:none;}
+  </style>
+</head>
+ 
+<body>  
+	<div class="container">
+	  	<div class="row">
+
+          	<div class="col-xs-8 col-xs-offset-2">
+			  	<form action = "/" method = "post" enctype="multipart/form-data"> 
+						   
+		  		        <div class="input-group">
+		                  	<div class="input-group-btn search-panel">
+		                  		<button type="button" class="btn btn-default">
+		                      	<input type="file" name="file" class="hide" id="fileinput" >
+		                      	<label for="fileinput">
+		                      		<span id="search_concept">Choose Image</span>
+		                      	</label>
+		                      </button>
+			               	</div>       
+			                  	<input type="text" class="form-control" name="x" placeholder="Search term...">
+			                  	<span class="input-group-btn">
+			                     <button class="btn btn-default btn-md" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+			                  	</span>
+			                  
+		                </div>
+             
+		        </form>
+           	</div>
+        </div>
+  	</div>
+
+</body>  
+</html>  

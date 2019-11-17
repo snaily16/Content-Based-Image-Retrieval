@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+body{
+  background-image: linear-gradient(to right,  #faaca8 , #ddd6f3);
+}
+
+div.container{
+  padding: 30px;
+  margin: auto;
+}
+div.gallery {
+  border: 1px solid #fff;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 10px;
+  float: left;
+  width: 24%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Query Image</h2>
+<img src="static/{{filename}}" width="300" height="200">
+{% if results %}
+  <h2>Result Image Gallery</h2>
+{% for (score, resultID) in results %}
+<div class="responsive">
+  <div class="gallery">
+      <img src="static/{{ resultID }}" width="600" height="400">
+  </div>
+</div>
+{% endfor %}
+<div>
+{% else %}
+    Search images :)
+  {% endif %}
+
+</body>
+</html>
